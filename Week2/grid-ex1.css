@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.title {
+  color: goldenrod;
+  text-align: center;
+  margin: 10px auto;
+  text-shadow: 2px 2px 5px gold;
+}
+#chat {
+  min-height: 70vh;
+  max-width: 900px;
+  margin: 10px auto;
+  padding: 5px;
+  border: 2px solid olivedrab;
+  border-radius: 10px 35px;
+  box-shadow: 5px 5px 10px olivedrab;
+  background-color: olivedrab;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 7fr 1fr;
+  grid-template-areas: "friends chatbox" "friends input";
+}
+
+#friends {
+  grid-area: friends;
+  border: 2px solid olivedrab;
+  border-radius: 7px 0px 0px 30px;
+  padding: 5px;
+  background-color: lightgreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#friends > h2 {
+  padding: 2px;
+  margin-bottom: 5px;
+  border-bottom: 1px dashed darkolivegreen;
+}
+.names {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  padding: 0px 5px;
+  margin-bottom: 10px;
+  /* gap: 20px; */
+}
+
+.names > p {
+  background-color: rgb(142, 190, 47);
+  border-radius: 5px;
+  width: 100%;
+  margin: auto 0;
+  padding: 5px 10px;
+}
+
+#chatbox {
+  grid-area: chatbox;
+  border: 2px solid black;
+  border-radius: 0px 30px 0px 0px;
+  padding: 5px;
+  background-color: lightgray;
+  display: grid;
+}
+.text-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 5px 5px 10px;
+  border-radius: 5px;
+}
+.left {
+  /* justify-content: left; */
+  background-color: rgb(156, 156, 156);
+  margin: auto auto auto 5px;
+}
+.right {
+  /* justify-content: right; */
+  background-color: rgb(63, 158, 63);
+  margin: auto 5px auto auto;
+}
+.text-container > .text {
+  margin-right: 15px;
+}
+
+.text-container > .time {
+  font-size: x-small;
+  align-self: flex-end;
+}
+
+#input {
+  grid-area: input;
+  border: 2px solid olivedrab;
+  border-radius: 0px 0px 7px 0px;
+  /* padding: 5px; */
+  background-color: lightgreen;
+  display: flex;
+}
+#input > input {
+  width: 75%;
+  padding: 5px;
+  border: none;
+}
+
+#input > div {
+  display: flex;
+  align-items: center;
+  padding: 0px 10%;
+  cursor: pointer;
+}
+
+#input > div:hover {
+  background-color: rgb(96, 222, 96);
+  border: 2px solid black;
+}
