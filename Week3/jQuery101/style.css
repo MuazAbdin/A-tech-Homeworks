@@ -1,0 +1,27 @@
+.box-container {
+  margin: 10px;
+}
+
+.box {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: sandybrown;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.names-container {
+  margin: 15px;
+  padding: 15px;
+  border: 2px solid darkcyan;
+  display: inline-block;
+}
+
+#plague {
+  display: inline-block;
+  font-size: medium;
+  font-weight: 600;
+  padding: 10px;
+  background-color: lightcoral;
+}
