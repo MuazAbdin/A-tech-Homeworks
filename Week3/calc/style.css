@@ -1,0 +1,31 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.inner {
+  height: 100px;
+  float: left;
+}
+
+.inner:first-child {
+  background-color: palevioletred;
+  width: calc(100% - 20px);
+}
+
+.inner:last-child {
+  background-color: grey;
+  width: 20px;
+}
+
+.ex2.container {
+  width: 40%;
+}
+.ex2 .box {
+  width: calc(100% / 3);
+  aspect-ratio: 1 / 1;
+  background-color: sandybrown;
+  float: left;
+  border: 1px solid black;
+}
