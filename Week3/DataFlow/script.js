@@ -17,6 +17,8 @@ const render = function () {
   }
 };
 
+render();
+
 $("button").click(function (e) {
   e.preventDefault();
   const name = $("#name").val();
