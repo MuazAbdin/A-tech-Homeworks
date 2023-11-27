@@ -2,6 +2,7 @@ $("#add-human-btn").on("click", function () {
   $(".humans-list>ul").append(
     `<li class="list-item">${$("input[id='name']").val()}</li>`
   );
+  $("input[id='name']").val("");
 });
 
 $(".humans-list>ul").on("click", "li", function () {
@@ -24,6 +25,13 @@ for (let i in boxes) {
   });
 }
 
+// let $boxes = $(".box")
+
+// $(".box").hover(function () {
+//   $boxes.css("background-color", "rgb(231, 76, 60)")
+//   $(this).css("background-color", "rgb(142, 68, 173)")
+// })
+
 /* ################## */
 
 // $(".add-to-cart .item[data-instock='true']").click(function () {
@@ -31,7 +39,7 @@ for (let i in boxes) {
 // });
 
 const counter = {};
-$("#items").on("click", ".item", function () {
+$(".item").on("click", function () {
   if ($(this).data().instock) {
     const key = $(this).text();
     counter[key] = (counter[key] || 0) + 1;
