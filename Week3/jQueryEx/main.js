@@ -85,3 +85,26 @@ for (let color of $("#colors>span")) {
     $(".color-picker>.box").css("background-color", `${$(this).data().color}`);
   });
 }
+
+/* ######## Computers Lab ########## */
+const computersIds = [];
+$(".generator").click(function () {
+  const comp = $(this).closest(".computer");
+  computersIds.push({ cmp_id: comp.data().id });
+  console.log(
+    `cmp_id: ${comp.data().id}\n` +
+      `proc_id: ${comp.find(".processor").attr("id")}\n` +
+      `BUS_num: ${comp.find(".BUS").text()}`
+  );
+});
+
+$(".validator").click(function () {
+  const comp = $(this).closest(".computer");
+  const proc = comp.find(".processor");
+  const QR = proc.find(".QR");
+  console.log(
+    `gen_tex: ${proc.find(".generator").text()}\n` +
+      `MB: ${comp.find(".MB").text()}\n` +
+      `QRs: ${$(QR[0]).text()} , ${$(QR[1]).text()}`
+  );
+});

@@ -1,3 +1,13 @@
+/* ########## */
+main {
+  display: flex;
+  gap: 20px;
+}
+main > section {
+  flex-grow: 1;
+}
+
+/* ########## */
 .humans-list {
   padding: 5px;
   margin: 10px;
