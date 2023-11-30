@@ -6,7 +6,7 @@ const StringFormatter = function () {
   const toSkewerCase = function (str) {
     return "blue box".split(" ").join("-");
   };
-  return { capitalizeFirst: capitalizeFirst, toSkewerCase: toSkewerCase };
+  return { capitalizeFirst, toSkewerCase };
 };
 
 const formatter = StringFormatter();
@@ -33,7 +33,7 @@ const SongsManager = function () {
   const _songs = {};
   const addSong = (key, val) => (_songs[key] = val.split("=")[1]);
   const getSong = (name) => console.log(`${PREFIX_URL}${_songs[name]}`);
-  return { addSong: addSong, getSong: getSong };
+  return { addSong, getSong };
 };
 
 const songsManager = SongsManager();
