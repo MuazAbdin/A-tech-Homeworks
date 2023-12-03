@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Cow",
+    "weight": { "cout": 900, "unit": "Kg" },
+    "homeland": "Sudan",
+    "isEndangered": false,
+    "food": [
+      { "name": "grass", "percentage": 50 },
+      { "name": "hay", "percentage": 50 }
+    ],
+    "predators": ["Mankind", "Lion", "Tiger"],
+    "deliciousScale": 5
+  },
+  {
+    "name": "Elephant",
+    "weight": { "cout": 2, "unit": "Ton" },
+    "homeland": "Sudan",
+    "isEndangered": true,
+    "food": [
+      { "name": "grass", "percentage": 30 },
+      { "name": "shrubs", "percentage": 50 },
+      { "name": "fruits", "percentage": 20 }
+    ],
+    "predators": ["Lion", "Tiger"],
+    "deliciousScale": 0
+  },
+  {
+    "name": "Gray Wolf",
+    "weight": { "cout": 100, "unit": "Kg" },
+    "homeland": "America",
+    "isEndangered": true,
+    "food": [{ "name": "cattle", "percentage": 100 }],
+    "predators": ["Bear", "Tiger"],
+    "deliciousScale": 0
+  }
+]
