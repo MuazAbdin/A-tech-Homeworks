@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+    <style>
+      .del-btn {
+        border: none;
+        background: none;
+        color: red;
+        cursor: pointer;
+      }
+
+      .del-btn:hover {
+        font-weight: bolder;
+        background-color: rgb(242, 214, 214);
+      }
+    </style>
+    <title>Local Storage Practice</title>
+  </head>
+  <body>
+    <input type="text" id="user-input" name="user-input" />
+    <button id="submit-btn">Add Text</button>
+    <button id="clear-btn">Clear All</button>
+    <section class="input-container">
+      <h3>Input History</h3>
+      <ul></ul>
+    </section>
+  </body>
+</html>

@@ -54,7 +54,9 @@ class Office {
   hireCleaner(name) {
     this.cleaners.push(new Cleaner(name));
   }
+
   startWorkDay() {
-    this.managers.forEach((m) => m.employees.forEach((e) => e.work(this)));
+    this.managers.forEach((m) => m.askEmployeesToWork(this));
+    this.cleaners.forEach((c) => c.clean());
   }
 }
