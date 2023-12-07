@@ -68,8 +68,10 @@ class Principal extends Person {
     this.students = this.students.filter((s) => s !== student);
   }
   transferStudent(student, principal) {
-    const idx = this.students.findIndex((s) => s === student);
-    principal.students.push(this.students.splice(idx, 1)[0]);
+    this.expelStudent(student);
+    principal.recruitStudent(student);
+    // const idx = this.students.findIndex((s) => s === student);
+    // principal.students.push(this.students.splice(idx, 1)[0]);
   }
 }
 
