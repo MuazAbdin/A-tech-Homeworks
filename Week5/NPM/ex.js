@@ -19,10 +19,10 @@ let text = "I'M SO EXCITED!!!~!";
 console.log(validator.blacklist(text, blacklist).toLowerCase());
 
 function makeHuman(num) {
-  return faker.helpers.multiple(
+  faker.helpers.multiple(
     () =>
       console.log(
-        `${faker.internet.userName()}, ` +
+        `${faker.person.firstName()}, ` +
           `${faker.image.avatar()}, ` +
           `${faker.company.name()}`
       ),

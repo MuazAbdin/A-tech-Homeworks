@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./jquery/dist/jquery.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <title>Furniture Store</title>
+  </head>
+  <body>
+    <h1>Furniture Store</h1>
+    <div id="money">$0</div>
+    <div id="sale" onclick="makeSale()" style="display: none">SALE</div>
+    <br />
+    <div class="header-container">
+      <div>
+        <div>
+          Are You an admin?
+          <div style="display: flex; gap: 0.5rem">
+            <input type="radio" id="yes" name="is-admin" value="YES" />
+            <label for="yes">YES</label><br />
+            <input type="radio" id="no" name="is-admin" value="NO" />
+            <label for="no">NO</label><br />
+            <button id="admin-check" onclick="checkAdmin()">SET</button>
+          </div>
+        </div>
+        <p>How much money do you want to have?</p>
+        <input type="number" id="money-intput" name="money" />
+        <button id="show-price" onclick="deposit()">Deposit</button>
+        &nbsp; | &nbsp;
+        <button
+          id="show-products"
+          onclick="toggleProducts(this)"
+          data-show="false"
+        >
+          Show Products
+        </button>
+      </div>
+      <div id="all-products" style="display: none"></div>
+    </div>
+    <hr />
+    <input type="text" id="pname" name="pname" />
+    <button id="show-price" onclick="showPrice()">Check Price</button>
+    <button id="but-item" onclick="buyItem()">Buy Item</button>
+    <button id="clear-log" onclick="clearLog()">Clear log</button>
+    &nbsp; | &nbsp;
+    <button id="check-chair" onclick="toggleCheck(this)" data-check="false">
+      Start Chair Check & Buy
+    </button>
+    <br /><br />
+    <div class="details">
+      <div id="product-details"></div>
+      <div id="check-interval-details"></div>
+    </div>
+  </body>
+</html>

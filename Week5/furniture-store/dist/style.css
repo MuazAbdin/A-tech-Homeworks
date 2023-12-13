@@ -1,0 +1,52 @@
+h1 {
+  display: inline;
+}
+
+#money {
+  display: inline-block;
+  width: max-content;
+  margin-left: 2rem;
+  border: 2px solid darkgreen;
+  color: darkgoldenrod;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.header-container {
+  display: flex;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+#sale {
+  display: inline-block;
+  width: max-content;
+  margin-left: 2rem;
+  border: 2px solid darkred;
+  background-color: lightcoral;
+  color: wheat;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#sale:hover {
+  background-color: lightpink;
+  color: red;
+}
+
+.details {
+  display: flex;
+  gap: 1rem;
+  min-height: 10rem;
+  min-width: 30rem;
+}
+
+#product-details {
+  border-right: 2px dashed black;
+  width: 23rem;
+}
