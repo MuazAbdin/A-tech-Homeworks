@@ -38,7 +38,7 @@ function checkAdmin() {
 
 function makeSale() {
   if (!checkAdmin()) return;
-  $.get("/sale/?admin=true").then((store) => {
+  $.get("/sale/?admin=true").then(() => {
     showProducts();
   });
 }
@@ -50,9 +50,9 @@ function showPrice() {
   });
 }
 
-function buyItem() {
+function buyItem(itemName) {
   const money = parseInt($("#money")[0].innerText.slice(1) || 0);
-  const name = $("#pname").val();
+  const name = itemName ? itemName : $("#pname").val();
   $.get(`/priceCheck/${name}`)
     .then(({ price }) => {
       // console.log(price);
@@ -88,20 +88,9 @@ function startChecking() {
     $.get("/priceCheck/chair").then(({ price }) => {
       if (price < lastCheckedPrice) {
         lastCheckedPrice = price;
-        $.get("/buy/chair").then((result) => {
-          if (typeof result === "string")
-            return $("#product-details").append(`<div>${result}</div>`);
-          const { name, price, inventory } = result;
-          $("#product-details").append(
-            `<div>${name} is bought for $${price} ${inventory} left.</div>`
-          );
-          $("#money")[0].innerText = `$${money - price}`;
-          $("#check-interval-details").append(
-            `<div>bought chair for less</div>`
-          );
-          console.log("bought chair for less");
-          showProducts();
-        });
+        buyItem("chair");
+        $("#check-interval-details").append(`<div>bought chair for less</div>`);
+        console.log("bought chair for less");
       } else {
         $("#check-interval-details").append(
           `<div>still waiting for a price drop...</div>`

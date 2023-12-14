@@ -9,12 +9,13 @@ const store = [
   { name: "picture frame", inventory: 31, price: 70 },
 ];
 
-app.use(express.static(path.join(__dirname, "dist")));
-app.use(express.static(path.join(__dirname, "node_modules")));
+app.use("/static", express.static(path.join(__dirname, "dist")));
+app.use("/static", express.static(path.join(__dirname, "node_modules")));
 
 app.get("/", (req, res) => {
   console.log("Server is up and running smoothly");
   res.send("Server is up and running smoothly");
+  // res.send();
 });
 
 app.get("/all-products", (req, res) => {
@@ -39,10 +40,13 @@ app.get("/sale/", (req, res) => {
   if (isAdmin?.toLowerCase() === "true") {
     store.forEach((item) => (item.price *= item.inventory > 10 ? 0.5 : 1));
   }
-  res.send(store);
+  res.end();
+  // res.send(store);
 });
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server is listening at port ${PORT}`);
+  console.log(
+    `Server is listening at port ${PORT}. ==>> go to http://localhost:${PORT}/static/  <<==`
+  );
 });
