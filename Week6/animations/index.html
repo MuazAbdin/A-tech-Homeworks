@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"
+    defer
+  ></script>
+  <script
+    src="https://kit.fontawesome.com/7e3efebb4d.js"
+    crossorigin="anonymous"
+    defer
+  ></script>
+  <title>Document</title>
+  <style>
+    @keyframes halo {
+      from {
+        box-shadow: 0 0 5px 5px #f39c12;
+      }
+      to {
+        box-shadow: 0 0 50px 5px #f39c12;
+      }
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 10rem;
+    }
+    .sun-ex {
+      display: flex;
+      gap: 5rem;
+    }
+    .ex {
+      background-color: black;
+      width: 20rem;
+      height: 20rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 2rem;
+      transform: translate(5rem, 5rem);
+    }
+    .ex-title {
+      text-align: center;
+      color: white;
+    }
+    .sun{
+      background-color: #f39c12;
+      border-radius: 50%;
+      width: 50%;
+      height: 50%;
+    }
+    .ex1 > .sun {
+      animation: halo 1s linear infinite alternate;
+    }
+    .ex2 > .sun {
+      box-shadow: 0 0 1px 1px #f39c12;
+      transition: box-shadow 1s linear;
+    }
+    .ex2:hover > .sun {
+      box-shadow: 0 0 50px 5px #f39c12;
+    }
+    .ex3 {
+      margin: 1rem;
+      border: 2px solid darkblue;
+      width: 80vw;
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+      grid-template-rows: 1fr 8fr;
+      grid-template-areas: "nav nav" "aside .";
+    }
+    .ex3 nav {
+      grid-area: nav;
+      padding: 0.5rem 1rem;
+      background-color: #2ecc71;
+    }
+    .ex3 nav i {
+      padding: 0.75rem;
+      cursor: pointer;
+    }
+    .ex3 nav i:hover {
+      background-color: #27ae60;
+    }
+    .ex3 aside {
+      width: 100%;
+      grid-area: aside;
+      background-color: #3498db;
+      transition: width 2s ease;
+    }
+    .ex3 .aside-list {
+      margin: 0; padding: 0;
+      overflow-x: clip;
+      list-style-type: none;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="sun-ex">
+      <article class="ex ex1">
+        <h3 class="ex-title">EX1</h3>
+        <div class="sun"></div>
+      </article>
+      <article class="ex ex2">
+        <h3 class="ex-title">EX2</h3>
+        <div class="sun"></div>
+      </article>
+    </div>
+    <article class="ex3">
+      <nav>
+        <i class="fa-solid fa-bars" onclick="toggle()"></i>
+      </nav>
+      <aside data-show="true">
+        <ul class="aside-list">
+          <li>Home</li>
+          <li>About</li>
+          <li>Shop</li>
+        </ul>
+      </aside>
+    </article>
+  </main>
+  
+  <script>
+    function toggle() {
+      const aside = $(".ex3 aside");
+      console.log();
+      if (aside.data().show) {
+        $("nav i").removeClass("fa-bars");
+        $("nav i").addClass("fa-xmark");
+        aside.css("width", "0")
+        aside.data("show", false);
+      } else {
+        $("nav i").removeClass("fa-xmark");
+        $("nav i").addClass("fa-bars");
+        aside.css("width", "100%")
+        aside.data("show", true);
+      }
+    }
+  </script>
+</body>
+</html>
