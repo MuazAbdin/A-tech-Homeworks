@@ -12,7 +12,7 @@ router.get("/people", function (req, res) {
 router.post("/person", function (req, res) {
   const newPerson = new Person(req.body);
   newPerson.save().then(function () {
-    res.send(newPerson);
+    res.status(201).send(newPerson);
   });
 });
 
