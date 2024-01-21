@@ -1,0 +1,38 @@
+body {
+  background-color: #e4e9ef;
+}
+
+.ex-space {
+  margin: 4vh;
+  padding: 2vh;
+  min-height: 10vh;
+  box-shadow: 1px 1px 3px black;
+}
+
+.ex-title {
+  margin-top: 0;
+  font-size: 1.5em;
+  letter-spacing: 0.5px;
+  color: #ff6e9f;
+  text-transform: uppercase;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#ex-2 {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+button {
+  min-width: 50px;
+  min-height: 15px;
+  padding: 0.5em;
+  font-size: 0.5em;
+  font-weight: 600;
+  background-color: grey;
+}
+
+.exercise {
+  margin-bottom: 10px;
+}
